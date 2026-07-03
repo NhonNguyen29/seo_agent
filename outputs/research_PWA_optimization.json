@@ -1,0 +1,12 @@
+{
+  "urls": [
+    "https://example-competitor-1.com",
+    "https://example-competitor-2.com",
+    "https://example-competitor-3.com"
+  ],
+  "questions": [
+    "Làm sao để tối ưu PWA optimization?",
+    "Best practices cho PWA optimization?",
+    "PWA optimization bao gồm những gì?"
+  ]
+}
