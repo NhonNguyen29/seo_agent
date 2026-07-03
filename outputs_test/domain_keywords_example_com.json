@@ -1,0 +1,92 @@
+{
+  "domain": "example.com",
+  "analysis": {
+    "keywords": [
+      "Chào bạn",
+      "lập trình",
+      "sản phẩm",
+      "dịch vụ",
+      "Do đó",
+      "nhóm chủ đề",
+      "ý tưởng bài viết",
+      "**Tuy nhiên",
+      "Thay vào đó",
+      "**Phần 1",
+      "tail và long",
+      "*   **Short",
+      "tail",
+      "*   **Long",
+      "**Phần 2",
+      "Nhóm keyword theo chủ đề/cluster**",
+      "**Cluster 3",
+      "Hạ tầng Website (Tên miền",
+      "Hosting)**",
+      "**Phần 3"
+    ],
+    "clusters": [
+      {
+        "theme": "Sau khi bạn cung cấp một domain có nội dung, tôi sẽ tiến hành phân tích chi tiết và cung cấp cho bạn danh sách keyword, nhóm chủ đề, ý tưởng bài viết, và đánh giá search intent theo yêu cầu.",
+        "keywords": [
+          "",
+          "**Tuy nhiên",
+          "tôi sẽ không thể cung cấp JSON theo yêu cầu của bạn vì điều này đòi hỏi định dạng rất cụ thể và nhiều trường thông tin mà các công cụ tôi có không thể tự động điền vào mà không có cơ sở dữ liệu thực tế.**",
+          "Thay vào đó",
+          "tôi sẽ trình bày theo từng phần và bạn có thể cấu trúc lại nếu cần."
+        ]
+      },
+      {
+        "theme": "**Cluster 4: Loại hình Website**",
+        "keywords": [
+          "*   **Informational:** Người dùng muốn tìm hiểu cách tạo",
+          "quy trình",
+          "các bước",
+          "và các công cụ để tự tạo website."
+        ]
+      },
+      {
+        "theme": "**Phần 3: Đánh giá search intent cho mỗi nhóm keyword**",
+        "keywords": [
+          "*   **Informational:** Người dùng muốn tìm hiểu cách tạo",
+          "quy trình",
+          "các bước",
+          "và các công cụ để tự tạo website.",
+          "*   **Informational:** Người dùng tìm kiếm kiến thức",
+          "cách thức",
+          "và các kỹ thuật để cải thiện thứ hạng trên Google."
+        ]
+      },
+      {
+        "theme": "*   **Cluster 1 (Tạo và Thiết kế Website):**",
+        "keywords": [
+          "*   **Informational:** Người dùng muốn tìm hiểu cách tạo",
+          "quy trình",
+          "các bước",
+          "và các công cụ để tự tạo website.",
+          "*   **Informational:** Người dùng tìm kiếm kiến thức",
+          "cách thức",
+          "và các kỹ thuật để cải thiện thứ hạng trên Google."
+        ]
+      },
+      {
+        "theme": "*   **Cluster 2 (Dịch vụ SEO và Tối ưu hóa):**",
+        "keywords": [
+          "*   **Informational:** Người dùng tìm kiếm kiến thức",
+          "cách thức",
+          "và các kỹ thuật để cải thiện thứ hạng trên Google.",
+          "*   **Cluster 3 (Hạ tầng Website - Tên miền",
+          "Hosting):**"
+        ]
+      }
+    ],
+    "article_ideas": [
+      "**Nếu bạn vẫn muốn một ví dụ về cách tôi sẽ trả lời với một domain giả định có nội dung tương tự như bạn mong đợi (nhưng vẫn mang tính minh họa):**",
+      "Giả sử `example.com` **thực chất là một trang web cung cấp thông tin và dịch vụ liên quan đến việc tạo website và tối ưu SEO** (đây là một giả định để minh họa khả năng của tôi).",
+      "**Tuy nhiên, tôi sẽ không thể cung cấp JSON theo yêu cầu của bạn vì điều này đòi hỏi định dạng rất cụ thể và nhiều trường thông tin mà các công cụ tôi có không thể tự động điền vào mà không có cơ sở dữ liệu thực tế.**",
+      "Thay vào đó, tôi sẽ trình bày theo từng phần và bạn có thể cấu trúc lại nếu cần.",
+      "**Phần 1: Liệt kê tối đa {max_keywords} keyword short-tail và long-tail phù hợp (giả định là website về tạo website và SEO)**",
+      "*   **Short-tail:**",
+      "*   tạo website"
+    ],
+    "search_intent": "Đánh giá search intent cho mỗi nhóm keyword**"
+  }
+}
