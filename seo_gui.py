@@ -13,6 +13,7 @@ import os
 import json
 import subprocess
 import threading
+import argparse
 from pathlib import Path
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 import urllib.parse
@@ -24,10 +25,14 @@ from datetime import datetime
 
 APP_DIR = Path(__file__).parent
 OUTPUT_DIR = APP_DIR / "outputs"
-PORT = 8000
+DEFAULT_PORT = 8000
+PORT = int(os.getenv('SEO_GUI_PORT', DEFAULT_PORT))
 
 # Background tasks registry for long-running operations (domain analysis)
 BACKGROUND_TASKS = {}
+
+class ReuseAddrHTTPServer(HTTPServer):
+    allow_reuse_address = True
 
 # ====================================================================
 # HTML Template
@@ -753,7 +758,7 @@ class SEOGUIHandler(SimpleHTTPRequestHandler):
 
 def run_gui():
     """Run GUI server"""
-    server = HTTPServer(('0.0.0.0', PORT), SEOGUIHandler)
+    server = ReuseAddrHTTPServer(('0.0.0.0', PORT), SEOGUIHandler)
     
     print("\n" + "="*70)
     print("🚀 SEO Agent Pipeline — Web GUI")

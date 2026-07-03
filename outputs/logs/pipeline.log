@@ -217,3 +217,155 @@
 [2026-07-03 14:59:38] [INFO] Outline generated successfully (3133 characters)
 [2026-07-03 14:59:38] [INFO] Outline saved: outputs/outline_productivity_software.md
 [2026-07-03 14:59:39] [INFO] Pipeline complete! Results in: /home/saoviet2026/ZCode/seo_agent_pipeline_project/outputs
+[2026-07-03 16:02:49] [INFO] SEO Agent Pipeline started
+[2026-07-03 16:02:49] [INFO] Running domain keyword analysis for: example.com
+[2026-07-03 16:02:49] [INFO] [Domain Keyword] Analyzing domain: example.com
+[2026-07-03 16:02:56] [INFO] Domain keyword analysis saved: outputs/domain_keywords_example_com.json
+[2026-07-03 16:51:02] [INFO] SEO Agent Pipeline started
+[2026-07-03 16:51:02] [INFO] Running demo with keywords: ['mobile SEO best practices', 'Progressive Web App optimization']
+[2026-07-03 16:51:02] [INFO] API Status: 1/3 configured (fallback mode enabled)
+[2026-07-03 16:51:02] [INFO] ============================================================
+[2026-07-03 16:51:02] [INFO] Processing keyword: mobile SEO best practices
+[2026-07-03 16:51:02] [INFO] ============================================================
+[2026-07-03 16:51:02] [INFO] [Pipeline 1] Researching keyword (mobile): 'mobile SEO best practices'
+[2026-07-03 16:51:02] [WARNING] API request failed: Serper API key not configured. Using fallback data.. Using simulated data for demo.
+[2026-07-03 16:51:02] [INFO] Research output saved: outputs/research_mobile_SEO_best_practices.json
+[2026-07-03 16:51:02] [INFO] [Pipeline 2] Scraping and cleaning content from 3 URLs
+[2026-07-03 16:51:02] [WARNING] Scraping failed for https://example-competitor-1.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 16:51:03] [WARNING] Scraping failed for https://example-competitor-2.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 16:51:04] [WARNING] Scraping failed for https://example-competitor-3.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 16:51:05] [INFO] Scraped 3 documents
+[2026-07-03 16:51:05] [INFO] [Pipeline 3] Analyzing semantic duplicates (threshold: 0.75)
+[2026-07-03 16:51:05] [INFO] Found 3 unique content gaps
+[2026-07-03 16:51:05] [INFO] [Pipeline 4] Generating outline for: mobile SEO best practices
+[2026-07-03 16:51:06] [WARNING] API call failed: 401 Client Error: Unauthorized for url: https://openrouter.ai/api/v1/chat/completions
+[2026-07-03 16:51:06] [INFO] Outline generated successfully (0 characters)
+[2026-07-03 16:51:06] [INFO] Outline saved: outputs/outline_mobile_SEO_best_practices.md
+[2026-07-03 16:51:07] [INFO] ============================================================
+[2026-07-03 16:51:07] [INFO] Processing keyword: Progressive Web App optimization
+[2026-07-03 16:51:07] [INFO] ============================================================
+[2026-07-03 16:51:07] [INFO] [Pipeline 1] Researching keyword (mobile): 'Progressive Web App optimization'
+[2026-07-03 16:51:07] [WARNING] API request failed: Serper API key not configured. Using fallback data.. Using simulated data for demo.
+[2026-07-03 16:51:07] [INFO] Research output saved: outputs/research_Progressive_Web_App_optimization.json
+[2026-07-03 16:51:07] [INFO] [Pipeline 2] Scraping and cleaning content from 3 URLs
+[2026-07-03 16:51:07] [WARNING] Scraping failed for https://example-competitor-1.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 16:51:08] [WARNING] Scraping failed for https://example-competitor-2.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 16:51:09] [WARNING] Scraping failed for https://example-competitor-3.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 16:51:10] [INFO] Scraped 3 documents
+[2026-07-03 16:51:10] [INFO] [Pipeline 3] Analyzing semantic duplicates (threshold: 0.75)
+[2026-07-03 16:51:10] [INFO] Found 3 unique content gaps
+[2026-07-03 16:51:10] [INFO] [Pipeline 4] Generating outline for: Progressive Web App optimization
+[2026-07-03 16:51:10] [WARNING] API call failed: 401 Client Error: Unauthorized for url: https://openrouter.ai/api/v1/chat/completions
+[2026-07-03 16:51:10] [INFO] Outline generated successfully (0 characters)
+[2026-07-03 16:51:10] [INFO] Outline saved: outputs/outline_Progressive_Web_App_optimization.md
+[2026-07-03 16:51:11] [INFO] Pipeline complete! Results in: /home/saoviet2026/ZCode/seo_agent_pipeline_project/outputs
+[2026-07-03 16:52:41] [INFO] SEO Agent Pipeline started
+[2026-07-03 16:52:41] [INFO] Running demo with keywords: ['mobile SEO best practices', 'Progressive Web App optimization']
+[2026-07-03 16:52:41] [INFO] API Status: 1/3 configured (fallback mode enabled)
+[2026-07-03 16:52:41] [INFO] ============================================================
+[2026-07-03 16:52:41] [INFO] Processing keyword: mobile SEO best practices
+[2026-07-03 16:52:41] [INFO] ============================================================
+[2026-07-03 16:52:41] [INFO] [Pipeline 1] Researching keyword (mobile): 'mobile SEO best practices'
+[2026-07-03 16:52:41] [WARNING] API request failed: Serper API key not configured. Using fallback data.. Using simulated data for demo.
+[2026-07-03 16:52:41] [INFO] Research output saved: outputs/research_mobile_SEO_best_practices.json
+[2026-07-03 16:52:41] [INFO] [Pipeline 2] Scraping and cleaning content from 3 URLs
+[2026-07-03 16:52:41] [WARNING] Scraping failed for https://example-competitor-1.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 16:52:42] [WARNING] Scraping failed for https://example-competitor-2.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 16:52:43] [WARNING] Scraping failed for https://example-competitor-3.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 16:52:44] [INFO] Scraped 3 documents
+[2026-07-03 16:52:44] [INFO] [Pipeline 3] Analyzing semantic duplicates (threshold: 0.75)
+[2026-07-03 16:52:46] [INFO] Found 3 unique content gaps
+[2026-07-03 16:52:46] [INFO] [Pipeline 4] Generating outline for: mobile SEO best practices
+[2026-07-03 16:52:48] [WARNING] API call failed: 401 Client Error: Unauthorized for url: https://openrouter.ai/api/v1/chat/completions
+[2026-07-03 16:52:48] [INFO] Outline generated successfully (0 characters)
+[2026-07-03 16:52:48] [INFO] Outline saved: outputs/outline_mobile_SEO_best_practices.md
+[2026-07-03 16:52:49] [INFO] ============================================================
+[2026-07-03 16:52:49] [INFO] Processing keyword: Progressive Web App optimization
+[2026-07-03 16:52:49] [INFO] ============================================================
+[2026-07-03 16:52:49] [INFO] [Pipeline 1] Researching keyword (mobile): 'Progressive Web App optimization'
+[2026-07-03 16:52:49] [WARNING] API request failed: Serper API key not configured. Using fallback data.. Using simulated data for demo.
+[2026-07-03 16:52:49] [INFO] Research output saved: outputs/research_Progressive_Web_App_optimization.json
+[2026-07-03 16:52:49] [INFO] [Pipeline 2] Scraping and cleaning content from 3 URLs
+[2026-07-03 16:52:49] [WARNING] Scraping failed for https://example-competitor-1.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 16:52:50] [WARNING] Scraping failed for https://example-competitor-2.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 16:52:51] [WARNING] Scraping failed for https://example-competitor-3.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 16:52:52] [INFO] Scraped 3 documents
+[2026-07-03 16:52:52] [INFO] [Pipeline 3] Analyzing semantic duplicates (threshold: 0.75)
+[2026-07-03 16:52:53] [INFO] Found 3 unique content gaps
+[2026-07-03 16:52:53] [INFO] [Pipeline 4] Generating outline for: Progressive Web App optimization
+[2026-07-03 16:52:54] [WARNING] API call failed: 401 Client Error: Unauthorized for url: https://openrouter.ai/api/v1/chat/completions
+[2026-07-03 16:52:54] [INFO] Outline generated successfully (0 characters)
+[2026-07-03 16:52:54] [INFO] Outline saved: outputs/outline_Progressive_Web_App_optimization.md
+[2026-07-03 16:52:55] [INFO] Pipeline complete! Results in: /home/saoviet2026/ZCode/seo_agent_pipeline_project/outputs
+[2026-07-03 16:56:45] [INFO] SEO Agent Pipeline started
+[2026-07-03 16:56:45] [INFO] Running demo with keywords: ['mobile SEO best practices', 'Progressive Web App optimization']
+[2026-07-03 16:56:45] [INFO] API Status: 1/3 configured (fallback mode enabled)
+[2026-07-03 16:56:45] [INFO] ============================================================
+[2026-07-03 16:56:45] [INFO] Processing keyword: mobile SEO best practices
+[2026-07-03 16:56:45] [INFO] ============================================================
+[2026-07-03 16:56:45] [INFO] [Pipeline 1] Researching keyword (mobile): 'mobile SEO best practices'
+[2026-07-03 16:56:45] [WARNING] API request failed: Serper API key not configured. Using fallback data.. Using simulated data for demo.
+[2026-07-03 16:56:45] [INFO] Research output saved: outputs/research_mobile_SEO_best_practices.json
+[2026-07-03 16:56:45] [INFO] [Pipeline 2] Scraping and cleaning content from 3 URLs
+[2026-07-03 16:56:45] [WARNING] Scraping failed for https://example-competitor-1.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 16:56:46] [WARNING] Scraping failed for https://example-competitor-2.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 16:56:47] [WARNING] Scraping failed for https://example-competitor-3.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 16:56:48] [INFO] Scraped 3 documents
+[2026-07-03 16:56:48] [INFO] [Pipeline 3] Analyzing semantic duplicates (threshold: 0.75)
+[2026-07-03 16:56:50] [INFO] Found 3 unique content gaps
+[2026-07-03 16:56:50] [INFO] [Pipeline 4] Generating outline for: mobile SEO best practices
+[2026-07-03 16:57:01] [INFO] Outline generated successfully (6816 characters)
+[2026-07-03 16:57:01] [INFO] Outline saved: outputs/outline_mobile_SEO_best_practices.md
+[2026-07-03 16:57:02] [INFO] ============================================================
+[2026-07-03 16:57:02] [INFO] Processing keyword: Progressive Web App optimization
+[2026-07-03 16:57:02] [INFO] ============================================================
+[2026-07-03 16:57:02] [INFO] [Pipeline 1] Researching keyword (mobile): 'Progressive Web App optimization'
+[2026-07-03 16:57:02] [WARNING] API request failed: Serper API key not configured. Using fallback data.. Using simulated data for demo.
+[2026-07-03 16:57:02] [INFO] Research output saved: outputs/research_Progressive_Web_App_optimization.json
+[2026-07-03 16:57:02] [INFO] [Pipeline 2] Scraping and cleaning content from 3 URLs
+[2026-07-03 16:57:02] [WARNING] Scraping failed for https://example-competitor-1.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 16:57:03] [WARNING] Scraping failed for https://example-competitor-2.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 16:57:04] [WARNING] Scraping failed for https://example-competitor-3.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 16:57:05] [INFO] Scraped 3 documents
+[2026-07-03 16:57:05] [INFO] [Pipeline 3] Analyzing semantic duplicates (threshold: 0.75)
+[2026-07-03 16:57:07] [INFO] Found 3 unique content gaps
+[2026-07-03 16:57:07] [INFO] [Pipeline 4] Generating outline for: Progressive Web App optimization
+[2026-07-03 16:57:18] [INFO] Outline generated successfully (6904 characters)
+[2026-07-03 16:57:18] [INFO] Outline saved: outputs/outline_Progressive_Web_App_optimization.md
+[2026-07-03 16:57:19] [INFO] Pipeline complete! Results in: /home/saoviet2026/ZCode/seo_agent_pipeline_project/outputs
+[2026-07-03 17:01:19] [INFO] SEO Agent Pipeline started
+[2026-07-03 17:01:19] [INFO] Running demo with keywords: ['mobile SEO best practices', 'Progressive Web App optimization']
+[2026-07-03 17:01:19] [INFO] API Status: 1/3 configured (fallback mode enabled)
+[2026-07-03 17:01:19] [INFO] ============================================================
+[2026-07-03 17:01:19] [INFO] Processing keyword: mobile SEO best practices
+[2026-07-03 17:01:19] [INFO] ============================================================
+[2026-07-03 17:01:19] [INFO] [Pipeline 1] Researching keyword (mobile): 'mobile SEO best practices'
+[2026-07-03 17:01:19] [WARNING] API request failed: Serper API key not configured. Using fallback data.. Using simulated data for demo.
+[2026-07-03 17:01:19] [INFO] Research output saved: outputs/research_mobile_SEO_best_practices.json
+[2026-07-03 17:01:19] [INFO] [Pipeline 2] Scraping and cleaning content from 3 URLs
+[2026-07-03 17:01:19] [WARNING] Scraping failed for https://example-competitor-1.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 17:01:20] [WARNING] Scraping failed for https://example-competitor-2.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 17:01:21] [WARNING] Scraping failed for https://example-competitor-3.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 17:01:22] [INFO] Scraped 3 documents
+[2026-07-03 17:01:22] [INFO] [Pipeline 3] Analyzing semantic duplicates (threshold: 0.75)
+[2026-07-03 17:01:24] [INFO] Found 3 unique content gaps
+[2026-07-03 17:01:24] [INFO] [Pipeline 4] Generating outline for: mobile SEO best practices
+[2026-07-03 17:01:36] [INFO] Outline generated successfully (6800 characters)
+[2026-07-03 17:01:36] [INFO] Outline saved: outputs/outline_mobile_SEO_best_practices.md
+[2026-07-03 17:01:37] [INFO] ============================================================
+[2026-07-03 17:01:37] [INFO] Processing keyword: Progressive Web App optimization
+[2026-07-03 17:01:37] [INFO] ============================================================
+[2026-07-03 17:01:37] [INFO] [Pipeline 1] Researching keyword (mobile): 'Progressive Web App optimization'
+[2026-07-03 17:01:37] [WARNING] API request failed: Serper API key not configured. Using fallback data.. Using simulated data for demo.
+[2026-07-03 17:01:37] [INFO] Research output saved: outputs/research_Progressive_Web_App_optimization.json
+[2026-07-03 17:01:37] [INFO] [Pipeline 2] Scraping and cleaning content from 3 URLs
+[2026-07-03 17:01:37] [WARNING] Scraping failed for https://example-competitor-1.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 17:01:38] [WARNING] Scraping failed for https://example-competitor-2.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 17:01:39] [WARNING] Scraping failed for https://example-competitor-3.com: Firecrawl API key not configured. Using simulated content.. Using simulated content.
+[2026-07-03 17:01:40] [INFO] Scraped 3 documents
+[2026-07-03 17:01:40] [INFO] [Pipeline 3] Analyzing semantic duplicates (threshold: 0.75)
+[2026-07-03 17:01:42] [INFO] Found 3 unique content gaps
+[2026-07-03 17:01:42] [INFO] [Pipeline 4] Generating outline for: Progressive Web App optimization
+[2026-07-03 17:01:51] [INFO] Outline generated successfully (7200 characters)
+[2026-07-03 17:01:51] [INFO] Outline saved: outputs/outline_Progressive_Web_App_optimization.md
+[2026-07-03 17:01:52] [INFO] Pipeline complete! Results in: /home/saoviet2026/ZCode/seo_agent_pipeline_project/outputs

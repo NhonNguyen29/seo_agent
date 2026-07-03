@@ -72,22 +72,23 @@ SCRAPER_MAX_PER_KEYWORD = int(config.get("SCRAPER_MAX_PER_KEYWORD", "3"))
 SCRAPER_TIMEOUT = int(config.get("SCRAPER_TIMEOUT", "30"))
 SCRAPER_DELAY = float(config.get("SCRAPER_DELAY", "1.0"))
 SEMANTIC_SIMILARITY_THRESHOLD = float(config.get("SEMANTIC_SIMILARITY_THRESHOLD", "0.75"))
-OUTLINE_MODEL = config.get("OUTLINE_MODEL", "deepseek/deepseek-r1:free")
+OUTLINE_MODEL = config.get("OUTLINE_MODEL", "openrouter/auto")
 NLP_MODEL = config.get("NLP_MODEL", "vi_core_news_lg")
-DOMAIN_KEYWORD_MODEL = config.get("DOMAIN_KEYWORD_MODEL", "deepseek/deepseek-r1:free")
+DOMAIN_KEYWORD_MODEL = config.get("DOMAIN_KEYWORD_MODEL", "openrouter/auto")
 DOMAIN_KEYWORD_MAX_TOKENS = int(config.get("DOMAIN_KEYWORD_MAX_TOKENS", "1200"))
 DOMAIN_KEYWORD_SUGGESTION_LIMIT = int(config.get("DOMAIN_KEYWORD_SUGGESTION_LIMIT", "20"))
 DOMAIN_FETCH_TIMEOUT = int(config.get("DOMAIN_FETCH_TIMEOUT", "30"))
 
-# Tải mô hình xử lý ngôn ngữ tự nhiên Tiếng Việt để lọc trùng lặp
+# Use sentence-transformers as the primary semantic engine (no spaCy dependency)
+embedder = None
 nlp = None
 try:
-    import spacy
-    nlp = spacy.load(NLP_MODEL)
-    logger.info(f"Loaded NLP model: {NLP_MODEL}")
+    from sentence_transformers import SentenceTransformer
+    embedder = SentenceTransformer('all-MiniLM-L6-v2')
+    logger.info("Loaded SentenceTransformer embedder: all-MiniLM-L6-v2")
 except Exception as e:
-    logger.warning(f"NLP model not available: {e}")
-    logger.info("Using fallback token-based similarity")
+    embedder = None
+    logger.warning(f"SentenceTransformer not available: {e}. Falling back to token-based similarity")
 
 
 def setup_logging(log_level: str = "INFO", log_file: Optional[str] = None):
@@ -483,6 +484,18 @@ class SemanticFilterAgent:
     def _get_similarity(self, text1: str, text2: str) -> float:
         """Calculate semantic similarity between two texts."""
         if nlp is None:
+            # If embedder available, use embedding cosine similarity
+            if embedder is not None:
+                try:
+                    v1 = embedder.encode(text1, convert_to_numpy=True)
+                    v2 = embedder.encode(text2, convert_to_numpy=True)
+                    # cosine similarity
+                    denom = (math.sqrt((v1 * v1).sum()) * math.sqrt((v2 * v2).sum()))
+                    if denom == 0:
+                        return 0.0
+                    return float((v1 @ v2) / denom)
+                except Exception as e:
+                    logger.warning(f"Embedder similarity failed: {e}")
             # Fallback: token-based Jaccard similarity
             words1 = set(text1.lower().split())
             words2 = set(text2.lower().split())
@@ -532,8 +545,8 @@ class SemanticFilterAgent:
 # =====================================================================
 class OutlineGeneratorAgent:
     """
-    Skill 4: Tích hợp OpenRouter, kết hợp mô hình suy luận DeepSeek-R1 để lập cấu trúc
-    và Claude 3.5 Sonnet tối ưu văn phong, xuất Outline đạt chuẩn Google E-E-A-T.
+    Skill 4: Tích hợp OpenRouter Auto Router để chọn mô hình tốt nhất tự động,
+    lập cấu trúc Outline và xuất nội dung chuẩn Google E-E-A-T cho Tiếng Việt.
     """
     def __init__(self, api_key: str):
         self.api_key = api_key
@@ -566,11 +579,20 @@ class OutlineGeneratorAgent:
             logger.warning(f"API call failed: {e}")
             return ""
 
-    def execute(self, keyword: str, questions: List[str], content_gaps: List[str]) -> str:
+    def execute(self, keyword: str, questions: List[str], content_gaps: List[str], competitor_urls: Optional[List[str]] = None) -> str:
         logger.info(f"[Pipeline 4] Generating outline for: {keyword}")
         
         context_questions = "\n".join([f"- {q}" for q in questions[:5]])  # Limit to 5 questions
         context_gaps = "\n".join([f"- {gap}" for gap in content_gaps[:5]])  # Limit to 5 gaps
+        
+        competitor_note = ""
+        if competitor_urls:
+            urls_text = "\n".join([f"- {url}" for url in competitor_urls[:10]])
+            competitor_note = (
+                "Các URL cạnh tranh tham khảo (top 10 kết quả hữu cơ, đã loại trừ YouTube):\n"
+                f"{urls_text}\n\n"
+                "Lưu ý: không sao chép nguyên văn nội dung từ các URL này, chỉ dùng chúng làm tham khảo về cấu trúc chủ đề, giọng văn và ý chính."
+            )
         
         system_prompt = (
             "Bạn là một chuyên gia SEO kỹ thuật bậc cao, copywriter chuyên nghiệp, am hiểu sâu sắc hệ thống Helpful Content của Google và tiêu chuẩn E-E-A-T.\n"
@@ -581,7 +603,8 @@ class OutlineGeneratorAgent:
             "2. Heading Hierarchy: H2, H3, H4 logic, không nhồi nhét từ khóa, cấu trúc dễ theo dõi.\n"
             "3. Semantic Entities: liệt kê ít nhất 5-7 thực thể cần có trong bài.\n"
             "4. Copy Writing từ content gap: Tách riêng nội dung độc quyền từ các khoảng trống (content gaps) đã xác định.\n"
-            "5. Tính thực tế: Bao gồm ví dụ, case study, kinh nghiệm thực tế của thị trường Việt."
+            "5. Tính thực tế: Bao gồm ví dụ, case study, kinh nghiệm thực tế của thị trường Việt.\n"
+            "6. Không sử dụng nội dung YouTube trong outline hoặc đề xuất từ khóa."
         )
         
         user_prompt = f"""
@@ -593,6 +616,7 @@ Câu hỏi người dùng tìm kiếm (Search Intent):
 Khoảng trống nội dung cần khai thác (Content Gaps - copy từ top 10 URLs):
 {context_gaps}
 
+{competitor_note}
 Hãy tạo Outline bài viết chuẩn SEO E-E-A-T bằng Tiếng Việt, sẵn sàng cho copywriter viết chi tiết.
 
 Đặc biệt chú ý:
@@ -717,7 +741,7 @@ def run_pipeline(keywords: List[str], out_dir: str = "outputs", steps: Optional[
         
         # Step 4: Outline
         if not steps or "outline" in steps:
-            outline_text = outline_gen.execute(kw, questions, gaps)
+            outline_text = outline_gen.execute(kw, questions, gaps, urls)
             
             # Save outline
             safe_kw = "_".join(kw.split())

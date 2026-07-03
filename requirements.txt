@@ -10,8 +10,8 @@ tqdm>=4.65.0
 python-dotenv>=0.21.0
 
 # NLP & Text Processing
-spacy>=3.5.0
-# Note: After install, run: python -m spacy download vi_core_news_lg
+# Using sentence-transformers for semantic similarity (no spaCy dependency)
+# sentence-transformers already listed above
 
 # Data validation
 pydantic>=2.0.0

@@ -9,7 +9,7 @@
 - **Pipeline 1 — Mobile Research**: Tìm kiếm SERP trên Serper.dev (giả lập device Mobile, locale VN) để lấy top competitors + "People Also Ask" questions.
 - **Pipeline 2 — Content Scraper**: Cào nội dung từ các URL rivals bằng Firecrawl API (hoặc fallback simulated) → markdown.
 - **Pipeline 3 — Semantic Deduplication**: Phân tích ngữ nghĩa + lọc nội dung trùng lặp dùng NLP (spaCy) hoặc token similarity.
-- **Pipeline 4 — Outline Generator**: Tạo outline bài viết EEAT-compliant (H2/H3 structure, semantic entities, direct answer) qua OpenRouter API (DeepSeek R1 + Claude 3.5).
+- **Pipeline 4 — Outline Generator**: Tạo outline bài viết EEAT-compliant (H2/H3 structure, semantic entities, direct answer) qua OpenRouter `openrouter/auto` để tự động điều hướng model tốt nhất cho Tiếng Việt.
 
 ---
 
@@ -119,7 +119,8 @@ SCRAPER_MAX_PER_KEYWORD = 3  # How many URLs to scrape per keyword
 SEMANTIC_SIMILARITY_THRESHOLD = 0.75  # Threshold for duplicate detection
 
 # Outline step
-OUTLINE_MODEL = "deepseek/deepseek-r1:free"  # Change to other OpenRouter models
+OUTLINE_MODEL = "openrouter/auto"  # Use OpenRouter Auto Router for best routing
+DOMAIN_KEYWORD_MODEL = "openrouter/auto"  # Use OpenRouter Auto Router for domain keyword analysis
 ```
 
 ---

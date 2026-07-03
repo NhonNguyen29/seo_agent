@@ -1,23 +1,45 @@
 # Pipeline 3: Semantic & Duplicate Filter Skill
 
-## 1. Mục tiêu (Objective)
-Phân tích ngữ nghĩa toàn bộ nội dung đã cào từ đối thủ so với kho dữ liệu hiện tại của hệ thống nhằm tìm ra khoảng trống nội dung (Content Gap) và loại bỏ trùng lặp văn bản.
+## 1. Mục tiêu
+Phân tích ngữ nghĩa trên văn bản đã cào để tìm "content gaps" và loại bỏ nội dung trùng lặp về ý (semantic duplicates), đảm bảo kết quả đầu ra có giá trị độc đáo.
 
-## 2. Bản chất kỹ thuật SEO (SEO Core Concept)
-- **Google Helpful Content System**: Google phạt nặng các nội dung sao chép, xào xáo hoặc dịch thô không mang lại giá trị độc nhất.
-- **Unique Value Discovery**: Tìm kiếm các góc độ nội dung mới mà đối thủ chưa khai thác tốt.
+## 2. Thay đổi chính
+- Loại bỏ `spaCy` hoàn toàn khỏi pipeline.
+- Chuyển sang `sentence-transformers` (embedder local) làm engine chính để tính tương đồng ngữ nghĩa.
+- Mặc định sử dụng mô hình nhúng: `all-MiniLM-L6-v2`.
 
-## 3. Công nghệ tích hợp (Tech Stack)
-- **Embedding Model**: OpenAI `text-embedding-3-small` API (hoặc Cohere Embed).
-- **Vector Database**: Qdrant / Pinecone / Milvus.
-- **Thuật toán**: Hệ số tương đồng Cosine (Cosine Similarity).
+## 3. Tech stack cập nhật
+- **Embedder (local)**: `sentence-transformers` (`all-MiniLM-L6-v2`).
+- **Vector DB (tuỳ chọn)**: Qdrant / Pinecone / Milvus. Hệ thống cũng có thể tính cosine trực tiếp trên vectors in-memory cho demo.
+- **Thuật toán**: Cosine similarity giữa vector embeddings.
 
-## 4. Ngưỡng logic loại bỏ (Business Logic Threshold)
-- Tính toán khoảng cách Vector giữa bài viết dự kiến và bài viết đối thủ.
-- **Nếu Cosine Similarity > 0.75 (75%)**: Xác định là nội dung trùng lặp ngữ nghĩa cao. 
-- **Action**: Agent tự động từ chối hướng tiếp cận cũ, ép buộc thay đổi góc nhìn hoặc bổ sung thêm thông tin chuyên sâu.
+## 4. Ngưỡng logic (Business Rules)
+- Nếu cosine similarity giữa bài tham chiếu và nội dung đối thủ > `SEMANTIC_SIMILARITY_THRESHOLD` (mặc định 0.75) => coi là trùng ngữ nghĩa và loại bỏ.
+- Ngưỡng này có thể tùy chỉnh trong `config` / `.env`.
 
-## 5. Luồng xử lý dữ liệu (Workflow & Output)
-1. **Input**: Văn bản Markdown thô từ Pipeline 2.
-2. **Execution**: Chuyển đổi văn bản thành Vector nhúng -> Đẩy vào Vector DB -> Truy vấn đo độ trùng lặp.
-3. **Output**: Danh sách các chủ đề/từ khóa đã được làm sạch, đảm bảo 100% tính độc nhất (Unique Content).
+## 5. Luồng xử lý (Workflow)
+1. Nhận danh sách văn bản Markdown từ Pipeline 2.
+2. Chia nhỏ/tối giản văn bản nếu quá dài (token cap), rồi encode bằng `sentence-transformers` thành vectors.
+3. Tính cosine similarity giữa vector của topic/keyword reference và từng document.
+4. Lưu lại những document có similarity thấp hơn ngưỡng (unique points) để phục vụ Outline Generator.
+
+## 6. Cài đặt & chạy
+- Cập nhật dependencies (đã loại `spacy`):
+
+```bash
+cd seo_agent_pipeline_project
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+- Chạy demo pipeline:
+
+```bash
+.venv/bin/python seo_agent_tool.py --run-demo
+```
+
+## 7. Ghi chú
+- `sentence-transformers` hoạt động offline (tải weights lần đầu), phù hợp với môi trường không muốn phụ thuộc API trả phí.
+- Nếu `sentence-transformers` không khả dụng, pipeline tự động fallback về so sánh token-based (Jaccard) như biện pháp tạm thời.
+- Tùy chọn nâng cao: kết nối vector DB để lưu history embeddings và truy vấn nhanh cho volume lớn.

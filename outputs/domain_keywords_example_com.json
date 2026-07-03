@@ -2,109 +2,41 @@
   "domain": "example.com",
   "analysis": {
     "keywords": [
-      "Chào bạn",
       "Tuy nhiên",
-      "tài liệu hướng lập trình",
-      "ví dụ về domain",
-      "trang mẫu",
-      "hướng chuẩn hóa web)",
-      "domain mẫu",
-      "ví dụ documentation",
-      "tài liệu lập trình",
-      "trang example\".",
-      "keywords",
-      "example domain",
-      "domain example",
-      "example.com",
-      "ví dụ domain",
-      "trang mẫu documentation",
-      "tài liệu ví dụ",
-      "domain dùng cho document",
-      "mẫu trang web",
-      "tài liệu lập trình ví dụ"
+      "tôi sẽ tiếp cận theo hướng",
+      "Ví dụ",
+      "**Tuy nhiên",
+      "tôi xin đề xuất như sau",
+      "**Yêu cầu",
+      "tail và long",
+      "*   **Short",
+      "tail",
+      "*   **Mid",
+      "*   **Long",
+      "5 keyword/cluster)**"
     ],
     "clusters": [
       {
-        "theme": "\"clusters\": [    {",
+        "theme": "General",
         "keywords": [
-          "cluster_name\": \"Tài liệu và Ví dụ Documentation",
-          "ví dụ documentation",
-          "tài liệu ví dụ",
-          "domain dùng cho document"
-        ]
-      },
-      {
-        "theme": "\"cluster_name\": \"Tài liệu và Ví dụ Documentation\",",
-        "keywords": [
-          "ví dụ documentation",
-          "tài liệu ví dụ",
-          "domain dùng cho document",
-          "ví dụ về tên miền"
-        ]
-      },
-      {
-        "theme": "\"cluster_name\": \"Domain Mẫu và Placeholder\",",
-        "keywords": [
-          "example domain",
-          "domain example",
-          "domain mẫu",
-          "domain placeholder"
-        ]
-      },
-      {
-        "theme": "\"cluster_name\": \"Trang Web Mẫu và Web Example\",",
-        "keywords": [
-          "example.com",
-          "trang mẫu documentation",
-          "mẫu trang web",
-          "sample website"
-        ]
-      },
-      {
-        "theme": "\"cluster_name\": \"Cấu trúc và URL Ví dụ\",",
-        "keywords": [
-          "example url",
-          "ví dụ cấu trúc web"
-        ]
-      },
-      {
-        "theme": "\"cluster_name\": \"Tài liệu và Ví dụ Documentation\",",
-        "keywords": [
-          "intent\": \"Informational (Thông tin)",
-          "reason\": \"Người dùng đang tìm kiếm định nghĩa",
-          "cách sử dụng và ví dụ về tài liệu",
-          "documentation để áp dụng vào bài viết hoặc code của họ.",
-          "}",
-          "cluster_name\": \"Domain Mẫu và Placeholder"
-        ]
-      },
-      {
-        "theme": "\"cluster_name\": \"Domain Mẫu và Placeholder\",",
-        "keywords": [
-          "intent\": \"Informational (Thông tin)",
-          "reason\": \"Người dùng muốn hiểu rõ khái niệm về domain mẫu",
-          "placeholder và mục đích sử dụng của nó trong việc tránh nhầm lẫn với domain thương mại.",
-          "}",
-          "cluster_name\": \"Trang Web Mẫu và Web Example"
-        ]
-      },
-      {
-        "theme": "\"cluster_name\": \"Trang Web Mẫu và Web Example\",",
-        "keywords": [
-          "intent\": \"Informational (Thông tin)",
-          "reason\": \"Người dùng cần tìm kiếm các trang mẫu",
-          "ví dụ web để nhúng vào tài liệu giới thiệu sản phẩm hoặc làm base cho dự án.",
-          "}",
-          "cluster_name\": \"Cấu trúc và URL Ví dụ"
+          "Tuy nhiên",
+          "tôi sẽ tiếp cận theo hướng",
+          "Ví dụ",
+          "**Tuy nhiên",
+          "tôi xin đề xuất như sau"
         ]
       }
     ],
     "article_ideas": [
-      "title\": \"10 Ví dụ Documentation Tốt Nhất: Khi và Nên Sử Dụng Domain Mẫu (Example.com)\",",
-      "description\": \"Hướng dẫn lập trình viên và người viết nội dung về cách sử dụng đúng đắn các domain mẫu như example.com trong tài liệu kỹ thuật, tránh nhầm lẫn với domain thật.",
-      "title\": \"Domain Mẫu (Placeholder Domain) Là Gì? Tầm Quan Trọng Của Ví dụ Documentation\",",
-      "description\": \"Giải thích khái niệm về domain placeholder, phân tích sự khác biệt giữa domain thật và domain mẫu, và lý do example.com là tiêu chuẩn quốc tế cho ví dụ."
+      "Để có thể đưa ra những đề xuất chất lượng nhất, tôi cần bạn cung cấp thêm thông tin về: **Lĩnh vực hoặc ngành hàng mà bạn dự định phát triển cho website \"example.com\".**",
+      "Ví dụ, bạn có thể trả lời như sau:",
+      "*   \"Tôi dự định phát triển website example.com thành một trang thông tin về **du lịch Đà Lạt**.",
+      "*   \"Tôi muốn example.com là một website bán **mỹ phẩm chính hãng**.",
+      "*   \"Tôi hướng đến việc xây dựng **blog cá nhân chia sẻ kiến thức về lập trình web**.",
+      "**Sau khi bạn cung cấp lĩnh vực mong muốn, tôi sẽ tiến hành phân tích chi tiết và cung cấp JSON theo yêu cầu của bạn.**",
+      "**Tuy nhiên, để minh họa cho câu trả lời, tôi sẽ đưa ra một ví dụ giả định với lĩnh vực \"Du lịch Đà Lạt\".**",
+      "**GIẢ ĐỊNH LĨNH VỰC: DU LỊCH ĐÀ LẠT**"
     ],
-    "search_intent": "\"Informational (Thông tin)\","
+    "search_intent": "Thông tin / Điều hướng"
   }
 }

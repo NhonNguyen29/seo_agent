@@ -44,6 +44,8 @@ def load_config(env_path: Optional[str] = None) -> dict:
                             'LOG_LEVEL', 'OUTPUT_DIR', 'LOG_DIR', 'RESEARCH_RESULTS_PER_KW',
                             'SCRAPER_MAX_PER_KEYWORD', 'SCRAPER_TIMEOUT', 'SCRAPER_DELAY',
                             'SEMANTIC_SIMILARITY_THRESHOLD', 'OUTLINE_MODEL', 'OUTLINE_MAX_TOKENS',
+                            'DOMAIN_KEYWORD_MODEL', 'DOMAIN_KEYWORD_MAX_TOKENS',
+                            'DOMAIN_KEYWORD_SUGGESTION_LIMIT', 'DOMAIN_FETCH_TIMEOUT',
                             'NLP_MODEL']})
     
     return config

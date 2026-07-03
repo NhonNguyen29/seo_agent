@@ -58,7 +58,8 @@
 | `SCRAPER_TIMEOUT` | `30` | int | HTTP timeout in seconds |
 | `SCRAPER_DELAY` | `1.0` | float | Delay between requests (seconds) |
 | `SEMANTIC_SIMILARITY_THRESHOLD` | `0.75` | float | Dedup threshold (0.0-1.0) |
-| `OUTLINE_MODEL` | `deepseek/r1:free` | string | LLM model selector |
+| `OUTLINE_MODEL` | `openrouter/auto` | string | LLM model selector (OpenRouter Auto Router) |
+| `DOMAIN_KEYWORD_MODEL` | `openrouter/auto` | string | OpenRouter model for domain keyword analysis |
 | `NLP_MODEL` | `vi_core_news_lg` | string | spaCy language model |
 
 ---
